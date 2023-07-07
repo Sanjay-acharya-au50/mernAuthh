@@ -11,8 +11,9 @@ import {Toaster} from 'react-hot-toast'
 import { UseProvider } from '../context/userContext'
 import Dashboard from './pages/Dashboard'
 
-
-axios.defaults.baseURL = "http://localhost:8000";
+// https://sanjay-mern-authh-backend.vercel.app
+// http://localhost:8000
+axios.defaults.baseURL = "https://sanjay-mern-authh-backend.vercel.app";
 axios.defaults.withCredentials = true;
 
 function App() {

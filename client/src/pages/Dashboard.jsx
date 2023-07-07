@@ -20,7 +20,7 @@ const Dashboard = () => {
   console.log("user :", user);
   
   const handleLogout = () => {
-    fetch("http://localhost:8000/logout",{
+    fetch("https://sanjay-mern-authh-backend.vercel.app/logout",{
         credentials : "include",
         method : "POST"
     })
