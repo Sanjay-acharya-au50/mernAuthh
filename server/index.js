@@ -11,7 +11,7 @@ const app = express();
 
 // database connection
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect("mongodb+srv://sanjayacharya992:san123@cluster0.nr79v14.mongodb.net/?retryWrites=true&w=majority")
 .then(()=>console.log("Data Base connected"))
 .catch((err)=>console.log("DataBase failed",err))
 
