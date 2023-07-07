@@ -24,6 +24,7 @@ const Register = () => {
       }
       else{
         setData({})
+        navigate('/login')
       
       }
     } catch (error) {
