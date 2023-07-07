@@ -8,7 +8,7 @@ const {test,registerUser,loginUser, getProfile, logout} = require("../controller
 
 router.use(cors({
     credentials:true,
-    origin:"https://sanjay-mern-authh-frontend.vercel.app"
+    origin:"http://localhost:5173"
 }))
 // http://localhost
 

@@ -4,6 +4,8 @@ const cors= require("cors")
 const {mongoose} = require("mongoose");
 //  cookies parse
 const cookiesParser = require('cookie-parser');
+// line 24
+const { urlencoded } = require("express")
 
 
 const app = express();
@@ -19,7 +21,8 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(express.json());
 // after cookies parse
 app.use(cookiesParser());
-app.use(express.urlencoded({extended:false}))
+// app.use(express.urlencoded({extended:false}))
+app.use(urlencoded({ extended: true }));
 
 
 app.use("/", require('./routes/authRoutes'))
