@@ -70,7 +70,7 @@ const loginUser = async (req, res) => {
     //generate token
     // const token_to_send = jwt.sign({ id: user._id }, "mySecretKey", { expiresIn: '1h' })
 
-    jwt.sign({ id: user._id , name:user.name }, "mySecretKey", {}, (err, token) => {
+    jwt.sign({ id: user._id , name:user.name }, process.env.JWT_SEC, {}, (err, token) => {
       if (err) throw err;
       res.cookie("newtoken", token).json(user);
       // console.log("toekn:",token);
@@ -91,7 +91,7 @@ const getProfile = (req, res) => {
   const { newtoken } = req.cookies;
   // console.log("token from verify", newtoken);
 
-  jwt.verify(newtoken, "mySecretKey", {}, (err, index) => {
+  jwt.verify(newtoken, process.env.JWT_SEC, {}, (err, index) => {
     if (err) throw err;
     res.json(index);
   });

@@ -11,7 +11,7 @@ const app = express();
 
 // database connection
 
-mongoose.connect("mongodb+srv://sanjayacharya992:san123@cluster0.nr79v14.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log("Data Base connected"))
 .catch((err)=>console.log("DataBase failed",err))
 
@@ -26,6 +26,6 @@ app.use("/", require('./routes/authRoutes'))
 
 
 
-app.listen(8000, ()=>{
+app.listen(process.env.PORT || 8000, ()=>{
     console.log("server loading : 8000");
 })
